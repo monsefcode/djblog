@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% for post in posts %}
+
+<div class="card mt-5 me-3">
+  <div class="card-body">
+    <div class="d-flex flex-row">
+        <a href="#" class="card-link pe-4">{{ post.author }}</a>
+        <h6 class="card-subtitle pt-2 text-muted">{{ post.date_posted|date:"F d, Y" }}</h6>
+    </div>
+    
+    <hr />
+    <h4>{{ post.title }}</h4>
+    <p class="card-text">{{ post.content }}</p>
+  </div>
+</div>
+
+{% endfor %}
+{% endblock content %}
+
